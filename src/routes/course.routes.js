@@ -16,16 +16,48 @@ route.route('/')
         res.status(200).json({total, courses})
     })
     .post(async (req, res) => {
-        const {title, description, teacher, students} = req.body
-        const course = new Course({title, description, teacher, students})
+        const {title, description, teacher} = req.body
+        const course = new Course({title, description, teacher})
 
         await course.save();
         res.status(201).json(course)
     })
 
 route.route('/:id')
-    .get()
-    .put()
-    .delete()
+    .get(async (req, res) => {
+        const {id} = req.params
+        const course = await Course.findById(id)
+
+        if (!course) {
+            return res.status(404).json({error: 'Course not found'})
+        }
+
+        res.status(200).json(course)
+    })
+    .put(async (req, res) => {
+        const {id} = req.params
+        const {title, description, teacher} = req.body
+        const course = await Course.findByIdAndUpdate(id, {title, description, teacher})
+        if (!course) {
+            return res.status(404).json({error: 'Course not found'})
+        }
+
+
+        res.status(200).json({
+            ...course._doc,
+            title: title || course._doc.title,
+            description: description || course._doc.description,
+            teacher: teacher || course._doc.teacher
+        })
+    })
+    .delete(async (req, res) => {
+        const {id} = req.params
+        const course = await Course.findByIdAndUpdate(id, {tp_status: false})
+        if (!course) {
+            return res.status(404).json({error: 'Course not found'})
+        }
+
+        res.status(200).json(course)
+    })
 
 export default route;
