@@ -17,12 +17,26 @@ export const login = async (req, res) => {
       .json({ error: "Invalid credentials, password incorrect" });
   }
 
-  res.status(200).json(user);
+  const token = await generateToken({
+    name: user.name,
+    email,
+    role: user.role,
+    uid: user._id,
+  }).catch(() => {
+    res
+      .status(500)
+      .json({ error: "Error generating token, try again in a few minutes" });
+  });
+  if (!token) {
+    return;
+  }
+
+  res.status(200).json({ ...user._doc, token });
 };
 
 export const signup = async (req, res) => {
   const { name, email, password, role } = req.body;
-  const encryptedPassword = hashPassword(password);
+  const encryptedPassword = await hashPassword(password);
   const user = new User({ name, email, password: encryptedPassword, role });
   await user.save();
   const token = await generateToken({ name, email, role, uid: user._id }).catch(

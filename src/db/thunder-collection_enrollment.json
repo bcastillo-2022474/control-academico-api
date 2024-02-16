@@ -1,0 +1,71 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "enrollment",
+    "dateExported": "2024-02-26T06:11:37.510Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "4c7e0a31-7a66-4ba1-bed3-f6b10752a9c4",
+            "colId": "41394e94-63e7-449f-b69d-393dfe583479",
+            "containerId": "",
+            "name": "get all enrollments",
+            "url": "http://localhost:3000/api/enrollment",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2024-02-26T06:01:42.114Z",
+            "modified": "2024-02-26T06:01:51.937Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        },
+        {
+            "_id": "b565f107-1d65-4416-bfaf-fe7f85a8c237",
+            "colId": "41394e94-63e7-449f-b69d-393dfe583479",
+            "containerId": "",
+            "name": "enroll student to course",
+            "url": "http://localhost:3000/api/enrollment/65dbcd269647509f4e9d98e9",
+            "method": "POST",
+            "sortNum": 30000,
+            "created": "2024-02-26T06:02:19.500Z",
+            "modified": "2024-02-26T06:08:16.845Z",
+            "headers": [
+                {
+                    "name": "token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiVmljdG9yIHRlc3QgMTAwMCIsImVtYWlsIjoidmljdG9yMTAwMEBlbWFpbC5jb20iLCJyb2xlIjoiVEVBQ0hFUiIsInVpZCI6IjY1ZGMxYmJiNjhhMThmZjRiMWIwYzA5YyIsImlhdCI6MTcwODkyNjkyMiwiZXhwIjoxNzExNTE4OTIyfQ.AfEznRG-Qd158HDujE-2NsSE5fPf6_woV-MT3XfWgQo"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"student\": \"65dbdbdcd5920e3149de5dfd\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "e292f86f-05e0-4974-bf53-cb45959da6e4",
+            "colId": "41394e94-63e7-449f-b69d-393dfe583479",
+            "containerId": "",
+            "name": "un enroll student to course",
+            "url": "http://localhost:3000/api/enrollment/65dbcd269647509f4e9d98e9",
+            "method": "DELETE",
+            "sortNum": 40000,
+            "created": "2024-02-26T06:03:10.486Z",
+            "modified": "2024-02-26T06:04:18.436Z",
+            "headers": [
+                {
+                    "name": "token",
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiVmljdG9yIHRlc3QgMTAwMCIsImVtYWlsIjoidmljdG9yMTAwMEBlbWFpbC5jb20iLCJyb2xlIjoiVEVBQ0hFUiIsInVpZCI6IjY1ZGMxYmJiNjhhMThmZjRiMWIwYzA5YyIsImlhdCI6MTcwODkyNjkyMiwiZXhwIjoxNzExNTE4OTIyfQ.AfEznRG-Qd158HDujE-2NsSE5fPf6_woV-MT3XfWgQo"
+                }
+            ],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"student\": \"65dbdbdcd5920e3149de5dfd\"\n}",
+                "form": []
+            },
+            "tests": []
+        }
+    ]
+}

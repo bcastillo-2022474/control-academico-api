@@ -26,3 +26,5 @@ router.post(
   ],
   signup,
 );
+
+export default router;

@@ -1,4 +1,4 @@
-import jwt from 'jsonwebtoken';
+import jwt from "jsonwebtoken";
 import User from "../model/user.js";
 
 export const isLoggedIn = async (req, res, next) => {
@@ -6,7 +6,7 @@ export const isLoggedIn = async (req, res, next) => {
     const { token } = req.headers;
 
     if (!token) {
-      return res.status(401).json({ message: 'Unauthorized' });
+      return res.status(401).json({ message: "Unauthorized, no JWT token" });
     }
 
     const { uid } = jwt.verify(token, process.env.JWT_SECRET);
@@ -14,13 +14,13 @@ export const isLoggedIn = async (req, res, next) => {
     const user = await User.findById(uid);
 
     if (!user) {
-      return res.status(401).json({ message: 'User not found' });
+      return res.status(401).json({ message: "User not found" });
     }
 
     req.user = user;
     next();
   } catch (error) {
     console.log(error);
-    res.status(401).json({ message: 'Invalid token or expired' });
+    res.status(401).json({ message: "Invalid token or expired" });
   }
 };

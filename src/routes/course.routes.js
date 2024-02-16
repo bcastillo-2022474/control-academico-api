@@ -42,8 +42,18 @@ route
       isLoggedIn,
       validateIsTeacher,
       param("id", "Course ID is required").isMongoId(),
-      body("title").exists().isLength({ min: 2 }),
-      body("description").exists().isLength({ min: 2 }),
+      body(
+        "title",
+        "title is optional, but, if defined, needs at least 2 characters",
+      )
+        .optional()
+        .isLength({ min: 2 }),
+      body(
+        "description",
+        "description is optional, but if defined, needs at least 2 characters",
+      )
+        .optional()
+        .isLength({ min: 2 }),
       body("teacher").exists().isMongoId(),
       exceptionOnValidation,
     ],
