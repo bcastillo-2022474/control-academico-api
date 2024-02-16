@@ -1,5 +1,6 @@
 import {Router} from "express";
 import Course from "../model/course.js";
+import Enrollment from "../model/enrollment.js";
 
 const route = Router()
 
@@ -52,11 +53,15 @@ route.route('/:id')
     })
     .delete(async (req, res) => {
         const {id} = req.params
+        console.log(id)
         const course = await Course.findByIdAndUpdate(id, {tp_status: false})
+        console.log(course)
+
         if (!course) {
             return res.status(404).json({error: 'Course not found'})
         }
-
+        // delete all enrollments for this course
+        Enrollment.findOneAndUpdate({course: id}, {tp_status: false}, {multi: true});
         res.status(200).json(course)
     })
 
