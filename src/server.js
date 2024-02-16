@@ -3,6 +3,7 @@ import dotenv from 'dotenv'
 import {dbConnection} from "./db/connection.js";
 import userRoutes from "./routes/user.routes.js";
 import courseRoutes from "./routes/course.routes.js";
+import enrollmentRoutes from "./routes/enrollment.routes.js";
 
 dotenv.config()
 
@@ -19,6 +20,7 @@ app.use((req, res, next) => {
 })
 app.use('/api/user', userRoutes)
 app.use('/api/course', courseRoutes)
+app.use('/api/enrollment', enrollmentRoutes)
 
 
 dbConnection().then(() => {
