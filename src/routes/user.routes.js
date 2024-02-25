@@ -41,7 +41,6 @@ route.route('/')
     .post(async (req, res) => {
         const {name, email, password, role} = req.body
         const user = new User({name, email, password, role})
-
         await user.save();
         res.status(201).json(user)
     })
@@ -62,12 +61,26 @@ route.route('/:id')
         const {name, email, password, role} = req.body
 
         const user = await User.findByIdAndUpdate(id, {name, email, password, role});
-        res.status(200).json(user)
+        if (!user) {
+            return res.status(404).json({error: 'User not found'})
+        }
+
+        const oldUser = user._doc;
+        res.status(200).json({
+            ...oldUser,
+            name: name || oldUser.name,
+            email: email || oldUser.email,
+            password: password || oldUser.password,
+            role: role || oldUser.role
+        })
     })
     .delete(async (req, res) => {
         const {id} = req.params
 
         const user = await User.findByIdAndUpdate(id, {tp_status: false});
+        if (!user) {
+            return res.status(404).json({error: 'User not found'})
+        }
         res.status(200).json(user)
     })
 
