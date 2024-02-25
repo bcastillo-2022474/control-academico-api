@@ -10,6 +10,13 @@ const app = express();
 const {PORT} = process.env
 
 app.use(express.json())
+app.use((req, res, next) => {
+    // logger
+    const {method, url, body, params, query} = req;
+    console.log('-----------------------------------------')
+    console.log({method, url, body, params, query});
+    next();
+})
 app.use('/api/user', userRoutes)
 app.use('/api/course', courseRoutes)
 
