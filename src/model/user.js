@@ -15,11 +15,12 @@ const userSchema = new Schema({
 });
 
 userSchema.statics.getCoursesTaughtByUser = function (userId) {
-    return Course.find({ teacher: userId });
+    return Course.find({ teacher: userId, tp_status: true});
 };
 
 userSchema.statics.getCoursesEnrolledByUser = async function (userId) {
-    const enrollments = await Enrollment.find({ student: userId });
+    const enrollments = await Enrollment.find({ student: userId, tp_status: true});
+    console.log({enrollments});
     return Course.find({ _id: { $in: enrollments.map(e => e.course) } });
 }
 
