@@ -1,4 +1,6 @@
 import Enrollment from "../model/enrollment.js";
+import User from "../model/user.js";
+import Course from "../model/course.js";
 
 export const getAllEnrollments = async (req, res) => {
   const { page = 0, limit = 10 } = req.query;
@@ -16,10 +18,30 @@ export const getAllEnrollments = async (req, res) => {
 
 export const enrollStudentToCourse = async (req, res) => {
   // enroll student to a course
-  const { course } = req.params;
-  const { student } = req.body;
-  const enrollment = new Enrollment({ course, student });
+  const { course: courseId } = req.params;
+  // Email of the student
+  const email = req.body.student;
+  const user = await User.findOne({ email });
+
+  if (!user) {
+    res.status(404).json({ error: "No User with that element" });
+  }
+
+  console.log;
+
+  const student = { email, id: user._id };
+  const course = await Course.findById(courseId);
+  if (!course) {
+    return res.status(404).json({ error: "Curso no encontrado" });
+  }
+
+  console.log("WORKING");
+  const enrollment = new Enrollment({
+    course: { id: course._id, name: course.title },
+    student,
+  });
   await enrollment.save();
+  console.log("DELETE");
   res.status(201).json(enrollment);
 };
 

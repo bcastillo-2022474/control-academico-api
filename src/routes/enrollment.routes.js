@@ -10,7 +10,7 @@ import {
   getAllEnrollments,
   unenrollStudentFromCourse,
 } from "../controllers/enrollment.controllers.js";
-import { body, check, param } from "express-validator";
+import { body, param } from "express-validator";
 import { exceptionOnValidation } from "../middlewares/exception-on-validation.js";
 
 const router = Router();
@@ -22,7 +22,7 @@ router
   .post(
     [
       isLoggedIn,
-      body("student", "Student ID is required").not().isEmpty().isMongoId(),
+      body("student", "Student Email is required").isEmail(),
       param("course", "Course ID is required").not().isEmpty().isMongoId(),
       exceptionOnValidation,
       validateIsTeacherOrEnrollingStudent,
@@ -34,7 +34,7 @@ router
   .delete(
     [
       isLoggedIn,
-      body("student", "Student ID is required").not().isEmpty().isMongoId(),
+      body("student", "Student Email is required").isEmail(),
       param("course", "Course ID is required").not().isEmpty().isMongoId(),
       exceptionOnValidation,
       validateIsTeacherOrEnrollingStudent,
