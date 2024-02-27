@@ -13,7 +13,7 @@ const app = express();
 const { PORT } = process.env;
 
 app.use(express.json());
-app.use(cors())
+app.use(cors());
 app.use((req, res, next) => {
   // logger
   const { method, url, body, params, query } = req;
