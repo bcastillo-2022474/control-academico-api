@@ -1,10 +1,10 @@
 import express from "express";
 import dotenv from "dotenv";
-import { dbConnection } from "./db/connection.js";
-import userRoutes from "./routes/user.routes.js";
-import courseRoutes from "./routes/course.routes.js";
-import enrollmentRoutes from "./routes/enrollment.routes.js";
-import authRoutes from "./routes/auth.routes.js";
+import { dbConnection } from "./src/db/connection.js";
+import userRoutes from "./src/routes/user.routes.js";
+import courseRoutes from "./src/routes/course.routes.js";
+import enrollmentRoutes from "./src/routes/enrollment.routes.js";
+import authRoutes from "./src/routes/auth.routes.js";
 import cors from "cors";
 
 dotenv.config();

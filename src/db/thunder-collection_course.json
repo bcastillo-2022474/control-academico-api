@@ -1,100 +1,100 @@
 {
     "client": "Thunder Client",
     "collectionName": "course",
-    "dateExported": "2024-02-26T06:11:28.585Z",
+    "dateExported": "2024-02-28T23:02:13.355Z",
     "version": "1.1",
     "folders": [],
     "requests": [
         {
-            "_id": "6aa2d5bf-d4af-4b1c-816c-3bf86093ce9f",
-            "colId": "0f9a1690-dce9-46fd-95fb-f37036a19899",
+            "_id": "b0e56224-1f30-49f8-a8d2-fa8e401c0e68",
+            "colId": "4aa89158-4574-4db0-8089-49b4cf861ae1",
             "containerId": "",
             "name": "get all courses",
             "url": "http://localhost:3000/api/course",
             "method": "GET",
             "sortNum": 10000,
-            "created": "2024-02-26T05:57:13.586Z",
-            "modified": "2024-02-26T05:57:33.996Z",
+            "created": "2024-02-27T20:03:45.396Z",
+            "modified": "2024-02-27T20:03:45.396Z",
             "headers": [],
             "params": [],
             "tests": []
         },
         {
-            "_id": "a3970291-8f08-40a2-a1d1-9fe8ee3743ff",
-            "colId": "0f9a1690-dce9-46fd-95fb-f37036a19899",
+            "_id": "63d01ba5-5f18-4544-811f-69626e8aface",
+            "colId": "4aa89158-4574-4db0-8089-49b4cf861ae1",
             "containerId": "",
             "name": "get course by id",
-            "url": "http://localhost:3000/api/course/65dc0e2bdfc526d7f6fcd919",
+            "url": "http://localhost:3000/api/course/65de6a1f075b7f64c570e372",
             "method": "GET",
             "sortNum": 20000,
-            "created": "2024-02-26T05:57:43.074Z",
-            "modified": "2024-02-26T05:58:05.712Z",
+            "created": "2024-02-27T20:03:45.397Z",
+            "modified": "2024-02-28T22:55:42.690Z",
             "headers": [],
             "params": [],
             "tests": []
         },
         {
-            "_id": "5bb603fb-c11f-480c-a4d2-f22daf0325b4",
-            "colId": "0f9a1690-dce9-46fd-95fb-f37036a19899",
+            "_id": "7e0dfa22-6174-4f4b-9d1b-32c3f4ae02e1",
+            "colId": "4aa89158-4574-4db0-8089-49b4cf861ae1",
             "containerId": "",
             "name": "post course",
             "url": "http://localhost:3000/api/course",
             "method": "POST",
             "sortNum": 30000,
-            "created": "2024-02-26T05:58:14.677Z",
-            "modified": "2024-02-26T05:59:06.500Z",
+            "created": "2024-02-27T20:03:45.398Z",
+            "modified": "2024-02-28T22:40:15.237Z",
             "headers": [
                 {
                     "name": "token",
-                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiVmljdG9yIHRlc3QgMTAwMCIsImVtYWlsIjoidmljdG9yMTAwMEBlbWFpbC5jb20iLCJyb2xlIjoiVEVBQ0hFUiIsInVpZCI6IjY1ZGMxYmJiNjhhMThmZjRiMWIwYzA5YyIsImlhdCI6MTcwODkyNjkyMiwiZXhwIjoxNzExNTE4OTIyfQ.AfEznRG-Qd158HDujE-2NsSE5fPf6_woV-MT3XfWgQo"
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiQnJhdWxpbyB0ZXN0IDEwMDAiLCJlbWFpbCI6ImJyYXVsaW9AZW1haWwuY29tIiwicm9sZSI6IlRFQUNIRVIiLCJ1aWQiOiI2NWRlNmExMDA3NWI3ZjY0YzU3MGUzNmYiLCJpYXQiOjE3MDkxNjAwMDUsImV4cCI6MTcxMTc1MjAwNX0.KCS0ax-rQUBQgZFDNEp_ilXZp6KkQZWv2S9pQq462MI"
                 }
             ],
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n  \"title\": \"Informatica II\",\n  \"description\": \"Curso de Informatica 2023\",\n  \"teacher\": \"65dc1bbb68a18ff4b1b0c09c\"\n}",
+                "raw": "{\n  \"title\": \"Informatica II\",\n  \"description\": \"Curso de Informatica 2023\"\n}",
                 "form": []
             },
             "tests": []
         },
         {
-            "_id": "20d88482-2cb7-4f64-9ac3-893b03f7ec18",
-            "colId": "0f9a1690-dce9-46fd-95fb-f37036a19899",
+            "_id": "3694bbd5-4ecc-401e-aab8-326e818657b8",
+            "colId": "4aa89158-4574-4db0-8089-49b4cf861ae1",
             "containerId": "",
             "name": "update course by id",
-            "url": "http://localhost:3000/api/course/65dc0e2bdfc526d7f6fcd919",
+            "url": "http://localhost:3000/api/course/65dfb6527d5fe100885f91e5",
             "method": "PUT",
             "sortNum": 40000,
-            "created": "2024-02-26T05:59:20.274Z",
-            "modified": "2024-02-26T05:59:55.169Z",
+            "created": "2024-02-27T20:03:45.399Z",
+            "modified": "2024-02-28T22:40:39.584Z",
             "headers": [
                 {
                     "name": "token",
-                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiVmljdG9yIHRlc3QgMTAwMCIsImVtYWlsIjoidmljdG9yMTAwMEBlbWFpbC5jb20iLCJyb2xlIjoiVEVBQ0hFUiIsInVpZCI6IjY1ZGMxYmJiNjhhMThmZjRiMWIwYzA5YyIsImlhdCI6MTcwODkyNjkyMiwiZXhwIjoxNzExNTE4OTIyfQ.AfEznRG-Qd158HDujE-2NsSE5fPf6_woV-MT3XfWgQo"
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiQnJhdWxpbyB0ZXN0IDEwMDAiLCJlbWFpbCI6ImJyYXVsaW9AZW1haWwuY29tIiwicm9sZSI6IlRFQUNIRVIiLCJ1aWQiOiI2NWRlNmExMDA3NWI3ZjY0YzU3MGUzNmYiLCJpYXQiOjE3MDkxNjAwMDUsImV4cCI6MTcxMTc1MjAwNX0.KCS0ax-rQUBQgZFDNEp_ilXZp6KkQZWv2S9pQq462MI"
                 }
             ],
             "params": [],
             "body": {
                 "type": "json",
-                "raw": "{\n  \"description\": \"\",\n  \"teacher\": \"65dc1bbb68a18ff4b1b0c09c\"\n}",
+                "raw": "{\n  \"description\": \"Informaticaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\"\n}",
                 "form": []
             },
             "tests": []
         },
         {
-            "_id": "fedc939b-750f-42dd-b979-a11377e88768",
-            "colId": "0f9a1690-dce9-46fd-95fb-f37036a19899",
+            "_id": "bd36caef-82c9-4f0f-baf6-d3f2e4b00a35",
+            "colId": "4aa89158-4574-4db0-8089-49b4cf861ae1",
             "containerId": "",
             "name": "delete course by id",
-            "url": "http://localhost:3000/api/course/65dc0e2bdfc526d7f6fcd919",
+            "url": "http://localhost:3000/api/course/65dfb6527d5fe100885f91e5",
             "method": "DELETE",
             "sortNum": 50000,
-            "created": "2024-02-26T06:00:22.247Z",
-            "modified": "2024-02-26T06:00:55.782Z",
+            "created": "2024-02-27T20:03:45.400Z",
+            "modified": "2024-02-28T22:40:55.911Z",
             "headers": [
                 {
                     "name": "token",
-                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiVmljdG9yIHRlc3QgMTAwMCIsImVtYWlsIjoidmljdG9yMTAwMEBlbWFpbC5jb20iLCJyb2xlIjoiVEVBQ0hFUiIsInVpZCI6IjY1ZGMxYmJiNjhhMThmZjRiMWIwYzA5YyIsImlhdCI6MTcwODkyNjkyMiwiZXhwIjoxNzExNTE4OTIyfQ.AfEznRG-Qd158HDujE-2NsSE5fPf6_woV-MT3XfWgQo"
+                    "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiQnJhdWxpbyB0ZXN0IDEwMDAiLCJlbWFpbCI6ImJyYXVsaW9AZW1haWwuY29tIiwicm9sZSI6IlRFQUNIRVIiLCJ1aWQiOiI2NWRlNmExMDA3NWI3ZjY0YzU3MGUzNmYiLCJpYXQiOjE3MDkxNjAwMDUsImV4cCI6MTcxMTc1MjAwNX0.KCS0ax-rQUBQgZFDNEp_ilXZp6KkQZWv2S9pQq462MI"
                 }
             ],
             "params": [],

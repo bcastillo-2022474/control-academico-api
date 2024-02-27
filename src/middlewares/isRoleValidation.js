@@ -16,9 +16,11 @@ export const validateIsStudent = validateRole("STUDENT");
 
 export const validateIsTeacherOrEnrollingStudent = async (req, res, next) => {
   // check is either TEACHER type role or the student that is about to be enrolled
-  const { role, _id } = req.user;
+  const { role, email } = req.user;
   const { student } = req.body;
-  if (role !== "TEACHER" && student !== _id.toString()) {
+  console.log({ student, email });
+  console.log(student === email);
+  if (student !== email && role !== "TEACHER") {
     return res.status(401).json({
       error:
         "Unauthorized, must be either a TEACHER, or the student about to be enrolled," +
