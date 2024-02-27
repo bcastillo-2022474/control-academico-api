@@ -16,8 +16,9 @@ export const getAllCourses = async (req, res) => {
 };
 
 export const postCourse = async (req, res) => {
-  const { title, description, teacher } = req.body;
-  const course = new Course({ title, description, teacher });
+  const { _id, name } = req.user;
+  const { title, description } = req.body;
+  const course = new Course({ title, description, teacher: { id: _id, name } });
 
   await course.save();
   res.status(201).json(course);
@@ -35,8 +36,10 @@ export const getCourseById = async (req, res) => {
 };
 
 export const updateCourseById = async (req, res) => {
+  const { _id, name } = req.user;
+  const teacher = { id: _id, name };
   const { id } = req.params;
-  const { title, description, teacher } = req.body;
+  const { title, description } = req.body;
   const course = await Course.findByIdAndUpdate(id, {
     title,
     description,

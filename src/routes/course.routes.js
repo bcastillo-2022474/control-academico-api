@@ -22,7 +22,6 @@ route
       validateIsTeacher,
       body("title").exists().isLength({ min: 2 }),
       body("description").exists().isLength({ min: 2 }),
-      body("teacher").exists().isMongoId(),
       exceptionOnValidation,
     ],
     postCourse,
@@ -54,7 +53,6 @@ route
       )
         .optional()
         .isLength({ min: 2 }),
-      body("teacher").exists().isMongoId(),
       exceptionOnValidation,
     ],
     updateCourseById,

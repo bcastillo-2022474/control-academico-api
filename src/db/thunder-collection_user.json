@@ -1,20 +1,20 @@
 {
     "client": "Thunder Client",
     "collectionName": "user",
-    "dateExported": "2024-02-26T06:10:52.410Z",
+    "dateExported": "2024-02-28T23:02:08.923Z",
     "version": "1.1",
     "folders": [],
     "requests": [
         {
-            "_id": "dbde9d38-05f1-4108-ba1b-3272bae7ba91",
-            "colId": "d3771327-1a68-41eb-906d-39e756f665ff",
+            "_id": "a988415f-85ec-4d5d-9826-1531bf688f2d",
+            "colId": "13e08242-9357-4315-8690-49041e9b133e",
             "containerId": "",
             "name": "get all user",
             "url": "http://localhost:3000/api/user?page=0&limit=10&role=TEACHER",
             "method": "GET",
             "sortNum": 10000,
-            "created": "2024-02-26T05:47:18.671Z",
-            "modified": "2024-02-26T05:53:25.782Z",
+            "created": "2024-02-27T20:03:45.425Z",
+            "modified": "2024-02-28T22:38:55.806Z",
             "headers": [],
             "params": [
                 {
@@ -36,29 +36,29 @@
             "tests": []
         },
         {
-            "_id": "075c00ed-6cb5-46cb-b436-77c451311f69",
-            "colId": "d3771327-1a68-41eb-906d-39e756f665ff",
+            "_id": "b3ce7bfa-2924-4e05-90b3-cd1d23adc5ee",
+            "colId": "13e08242-9357-4315-8690-49041e9b133e",
             "containerId": "",
             "name": "get user by id",
             "url": "http://localhost:3000/api/user/65dc1bbb68a18ff4b1b0c09c",
             "method": "GET",
             "sortNum": 20000,
-            "created": "2024-02-26T05:54:04.096Z",
-            "modified": "2024-02-26T05:54:18.841Z",
+            "created": "2024-02-27T20:03:45.426Z",
+            "modified": "2024-02-27T20:03:45.426Z",
             "headers": [],
             "params": [],
             "tests": []
         },
         {
-            "_id": "81ad3db9-07f5-41ef-bc40-13898ba0b370",
-            "colId": "d3771327-1a68-41eb-906d-39e756f665ff",
+            "_id": "ddff30ff-0686-4835-89d1-9f0d601d29cf",
+            "colId": "13e08242-9357-4315-8690-49041e9b133e",
             "containerId": "",
             "name": "update user by id",
             "url": "http://localhost:3000/api/user/65dbdbdcd5920e3149de5dfd",
             "method": "PUT",
             "sortNum": 30000,
-            "created": "2024-02-26T05:54:35.216Z",
-            "modified": "2024-02-26T05:55:29.326Z",
+            "created": "2024-02-27T20:03:45.427Z",
+            "modified": "2024-02-27T20:03:45.427Z",
             "headers": [
                 {
                     "name": "token",
@@ -69,15 +69,15 @@
             "tests": []
         },
         {
-            "_id": "f859c4e5-0772-495e-804f-0e4b6be6fb10",
-            "colId": "d3771327-1a68-41eb-906d-39e756f665ff",
+            "_id": "cb3ae030-785d-4a70-ba53-4d458ed2fffc",
+            "colId": "13e08242-9357-4315-8690-49041e9b133e",
             "containerId": "",
             "name": "delete user by id",
             "url": "http://localhost:3000/api/user/65dbdbdcd5920e3149de5dfd",
             "method": "DELETE",
             "sortNum": 40000,
-            "created": "2024-02-26T05:55:41.242Z",
-            "modified": "2024-02-26T05:56:20.391Z",
+            "created": "2024-02-27T20:03:45.428Z",
+            "modified": "2024-02-27T20:03:45.428Z",
             "headers": [
                 {
                     "name": "token",

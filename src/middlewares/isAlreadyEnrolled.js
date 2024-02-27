@@ -6,7 +6,7 @@ export const isAlreadyEnrolled = async (req, res, next) => {
   const { student } = req.body;
   const enrollment = await Enrollment.findOne({
     course,
-    student,
+    email: student,
     tp_status: true,
   });
   if (enrollment) {
@@ -19,7 +19,7 @@ export const isAlreadyOn3Courses = async (req, res, next) => {
   const { student } = req.body;
 
   const totalEnrollments = await Enrollment.countDocuments({
-    student,
+    email: student,
     tp_status: true,
   });
   if (totalEnrollments >= 3) {
